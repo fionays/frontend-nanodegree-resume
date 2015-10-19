@@ -62,7 +62,7 @@ var education = {
 			"degree": "Master",
 			"majors": ["Electrical and Computer Engineering"],
 			"dates": 2015,
-			"url": "None"
+			"url": ""
 		},
 		{
 			"name": "Hubei University",
@@ -70,7 +70,7 @@ var education = {
 			"degree": "BE",
 			"majors": ["Telecommunications Engineering"],
 			"dates": 2013,
-			"url": "None"
+			"url": ""
 		}
 	],
 	"onlineCourses": [
@@ -134,4 +134,40 @@ education.display = function() {
 
 education.display();
 /******************Projects object******************/
+var projects = {
+	"projects": [
+		{
+			"title": "Popular Movie",
+			"dates": "Sep. 2015 -- Nov. 2015",
+			"description": "An awesome Android application which provides a lot of movie information" +
+			               "according to the popularity as well as ranks. You can select any movie You" +
+			                "like and then get more overview or start the trailer.",
+			"images": []
+		}
+	]
+};
+
+projects.display = function() {
+	for (project in projects.projects) {
+		$('#projects').append(HTMLprojectStart);
+		
+		title = HTMLprojectTitle.replace('%data%', projects.projects[project].title);
+		dates = HTMLprojectDates.replace('%data%', projects.projects[project].dates);
+		description = HTMLprojectDescription.replace('%data%', projects.projects[project].description);
+
+		$('.project-entry:last').append(title);
+		$('.project-entry:last').append(dates);
+		$('.project-entry:last').append(description);
+
+		if (projects.projects[project].images.length > 0) {
+			for (image in projects.projects[project].images) {
+				var image = HTMLprojectImage.replace('%data%', projects.projects[project].images[image]);
+				$('.project-entry:last').append(image);
+			}
+		}
+	}
+}
+
+projects.display();
+
 /******************Work object******************/
