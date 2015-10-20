@@ -171,3 +171,41 @@ projects.display = function() {
 projects.display();
 
 /******************Work object******************/
+var work = {
+	"jobs": [
+		{
+			"employer": "BookStore",
+			"title": "Book Management",
+			"location": "Tucson, AZ",
+			"dates": "Jul. 2014 -- Sep. 2014",
+			"description": "Seperating the old books and brand new books."
+		},
+		{
+			"employer": "Supermaket",
+			"title": "Cashier",
+			"location": "Phoenix, AZ",
+			"dates": "Jul. 2015 -- Sep. 2015",
+			"description": "Working as a cashier in the Supermaket and also dealing with item return."
+		}
+	]
+};
+
+work.display = function() {
+	for (job in work.jobs) {
+		$('#workExperience').append(HTMLworkStart);
+
+		var employer = HTMLworkEmployer.replace('%data%', work.jobs[job].employer);
+		var title = HTMLworkTitle.replace('%data%', work.jobs[job].title);
+		var location = HTMLworkLocation.replace('%data%', work.jobs[job].location);
+		var description = HTMLworkDescription.replace('%data%', work.jobs[job].description);
+		var dates = HTMLworkDates.replace('%data%', work.jobs[job].dates);
+
+		$('.work-entry:last').append(employer);
+		$('.work-entry:last').append(title);
+		$('.work-entry:last').append(dates);
+		$('.work-entry:last').append(location);
+		$('.work-entry:last').append(description);
+	}
+}
+
+work.display();
