@@ -3,17 +3,21 @@ This is empty on purpose! Your code to build the resume will go here.
  */
 
 /******************Bio object******************/
-var bio = {};
-bio.name = 'Yang Song';
-bio.role = 'Want to be Web and Android Developer';
-bio.welcomeMessage ='welcome to my website!';
-bio.contacts = {'mobile': '520-907-0663',
-					'email': 'guoguoxiaolanxiong@gmail.com',
-					'github': 'fionays',
-					'twitter': '@FionaSong007',
-					'location': 'Tucson, AZ'};
-bio.skills = ['Java', 'JavaScript', 'HTML', 'CSS', 'XML', 'OO Design'];
-bio.biopic = 'images/fry.jpg';
+var bio = {
+	"name": "Yang Song",
+	"role": "Want to be Web and Android Developer",
+	"welcomeMessage": "welcome to my website!",
+	"contacts": {
+		 			"mobile": "520-***-****",
+					"email": "guoguoxiaolan*****@gmail.com",
+					"github": "fionays",
+					"twitter": "@FionaSong007",
+					"location": "Tucson, AZ"
+				},
+	"skills": ["Java", "JavaScript", "HTML", "CSS", "XML"],
+	"biopic": "images/fry.jpg"			
+};
+
 bio.display = function() {
 
 	var formattedName = HTMLheaderName.replace('%data%', bio.name);
