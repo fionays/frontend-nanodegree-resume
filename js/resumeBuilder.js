@@ -212,3 +212,15 @@ work.display();
 
 /******************Add Google Map******************/
 $('#mapDiv').append(googleMap);
+
+/***************Internationalize Names*************/
+function inName () {
+	var name = bio.name.trim().split(" ");
+	console.log(name);
+	name[1] = name[1].toUpperCase();
+	name[0] = name[0].slice(0,1).toUpperCase() + 
+	  name[0].slice(1).toLowerCase();
+
+	return name[0] + " " + name[1];  
+}
+$('#main').append(internationalizeButton);
