@@ -209,3 +209,6 @@ work.display = function() {
 }
 
 work.display();
+
+/******************Add Google Map******************/
+$('#mapDiv').append(googleMap);
